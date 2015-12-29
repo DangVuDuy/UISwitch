@@ -2,13 +2,15 @@
 //  ViewController.m
 //  UISwitch
 //
-//  Created by Dang Vu Duy on 12/29/15.
+//  Created by Dang Vu Duy on 12/20/15.
 //  Copyright © 2015 Dang Vu Duy. All rights reserved.
 //
 
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *ButtonOn;
+@property (weak, nonatomic) IBOutlet UIButton *ButtonOff;
 
 @end
 
@@ -16,12 +18,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+}
+- (IBAction)OnSwitch:(id)sender {
+    [_ButtonOn setImage:[UIImage imageNamed:@"OnWhite"] forState:normal];
+    [_ButtonOff setImage:[UIImage imageNamed:@"OffWhite"] forState:normal];
+}
+- (IBAction)OffSwitch:(id)sender {
+    [_ButtonOn setImage:[UIImage imageNamed:@"OnBlack"] forState:normal];
+    [_ButtonOff setImage:[UIImage imageNamed:@"OffBlack"] forState:normal];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
